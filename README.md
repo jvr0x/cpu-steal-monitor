@@ -127,11 +127,11 @@ systemctl restart cpu-steal-monitor
 For a quick one-time check without the monitor:
 
 ```bash
-# Show current steal time
+# Show current steal time (reads directly from /proc/stat)
 grep 'cpu ' /proc/stat | awk '{print "Steal: " 100*$8/($2+$3+$4+$5+$6+$7+$8+$9) "%"}'
 
-# Or with better formatting
-top -bn1 | grep "Cpu(s)" | awk '{print "Steal: " $8 "%"}'
+# Alternative: using mpstat if available
+mpstat 1 1 | awk '/Average/ {print "Steal: " $(NF-4) "%"}'
 ```
 
 ## Interpretation
