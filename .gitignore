@@ -1,0 +1,30 @@
+# Rust
+/target/
+**/*.rs.bk
+*.pdb
+Cargo.lock
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Compiled binaries (ignore the release binary but keep structure)
+# Uncomment if you want to ignore the built binary
+# /cpu-steal-monitor
+
+# Environment
+.env
+.env.local
+
+# Test coverage
+*.profraw
